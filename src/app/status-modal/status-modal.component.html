@@ -1,0 +1,13 @@
+<div
+  [style]="this.status == 'error' ? 'border: solid red 1px;' : 'border: solid green 1px;'"
+>
+  <h2 [style]="this.status == 'error' ? 'color: red;' : 'color: green;'">{{ this.status }}</h2>
+  <div *ngIf="this.invalidFields && this.invalidFields.length > 0">
+    <h4>Invalid fields: </h4>
+    <div *ngFor="let field of this.invalidFields">
+      <span>
+        {{ field }}
+      </span>
+    </div>
+  </div>
+</div>

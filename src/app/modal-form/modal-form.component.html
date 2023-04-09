@@ -1,0 +1,28 @@
+<div style="border: solid black 1px;">
+  <form [formGroup]="this.form" (ngSubmit)="this.submit(this.form)">
+    <label >
+      Name
+      <input 
+       [style]="showErr(getNameCtrl()) ? 'border: solid red 1px;' : '' " 
+       formControlName="name"
+      />
+    </label>
+
+
+    <label>
+      Color 
+      <select
+        [style]="showErr(getColorCtrl()) ? 'border: solid red 1px;' : '' "
+        formControlName="color"
+      >
+        <option>Green</option>
+        <option>Red</option>
+        <option>Blue</option>
+      </select>
+    </label>
+
+    <button type="submit">
+      Submit
+    </button>
+  </form>
+</div>
